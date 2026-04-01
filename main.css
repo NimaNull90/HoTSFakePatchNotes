@@ -1,0 +1,492 @@
+@font-face {
+  font-family: "Metronic Pro";
+  src: url("fonts/MetronicPro-Regular.woff2") format("woff2"),
+       url("fonts/MetronicPro-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Metronic Pro";
+  src: url("fonts/MetronicPro-Bold.woff2") format("woff2"),
+       url("fonts/MetronicPro-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+
+:root {
+  --bg: #050447;
+  --bg-deep: #020235;
+  --text: #ffffff;
+  --muted: #9ea5ba;
+  --soft: #c9d0e3;
+  --line: #df5d3b;
+  --link: #ffffff;
+  --link-hover: #f1ae72;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top center, rgba(103, 103, 255, 0.28) 0%, rgba(20, 20, 93, 0.14) 18%, rgba(5, 4, 71, 0) 42%),
+    linear-gradient(180deg, #050447 0%, #040340 40%, #020235 100%);
+  color: var(--text);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.page-glow {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at top center, rgba(130, 140, 255, 0.22) 0, rgba(130, 140, 255, 0.08) 16%, rgba(0, 0, 0, 0) 42%);
+  z-index: 0;
+}
+
+.article-shell {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  padding: 64px 24px 120px;
+}
+
+.article {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.game-label {
+  margin: 0 0 16px;
+  color: var(--muted);
+  font-size: 1.1rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.article-title,
+.quick-nav h2,
+.content-section > h2,
+.hero-entry > h3,
+.hero-toc-group > h3,
+.hero-entry h4 {
+  font-family: "Metronic Pro", Arial, Helvetica, sans-serif;
+}
+
+.article-title {
+  margin: 0;
+  max-width: 900px;
+  font-size: clamp(2.8rem, 5vw, 5.2rem);
+  font-weight: 400;
+  line-height: 1.02;
+  letter-spacing: 0;
+  color: #ffffff;
+}
+
+.article-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 14px;
+  margin-top: 22px;
+  color: var(--soft);
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.author,
+.date {
+  white-space: nowrap;
+}
+
+.meta-separator {
+  width: 1px;
+  height: 18px;
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.socials {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-left: 8px;
+}
+
+.socials a {
+  color: #ff6d3c;
+  text-decoration: none;
+  font-size: 1.3rem;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-banner {
+  margin: 34px 0 34px;
+}
+
+.hero-banner img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+.intro-copy {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.intro-copy p {
+  margin: 0;
+  color: #ffffff;
+  font-size: 1rem;
+  line-height: 2;
+}
+
+.section-divider {
+  width: 100%;
+  max-width: 360px;
+  height: 1px;
+  margin: 54px auto 46px;
+  background: var(--line);
+}
+
+.quick-nav {
+  max-width: 760px;
+  margin: 0 auto 56px;
+}
+
+.quick-nav h2,
+.content-section > h2 {
+  margin: 0 0 18px;
+  font-size: clamp(2rem, 3vw, 3rem);
+  font-weight: 400;
+  line-height: 1.1;
+  color: #ffffff;
+}
+
+.quick-nav ul {
+  margin: 0;
+  padding-left: 22px;
+}
+
+.quick-nav li {
+  margin: 8px 0;
+}
+
+.quick-nav a,
+.return-link,
+.content-section a {
+  color: var(--link);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+.quick-nav a:hover,
+.return-link:hover,
+.content-section a:hover {
+  color: var(--link-hover);
+}
+
+.content-section {
+  max-width: 760px;
+  margin: 0 auto 60px;
+}
+
+.content-section p,
+.content-section li {
+  font-size: 1rem;
+  line-height: 1.9;
+}
+
+.content-section ul {
+  padding-left: 22px;
+}
+
+.hero-toc-group {
+  margin-bottom: 38px;
+}
+
+.hero-toc-group > h3 {
+  margin: 0 0 14px;
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: #ffffff;
+}
+
+.hero-toc-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 18px;
+}
+
+.hero-toc-card {
+  display: block;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.hero-toc-card img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  margin-bottom: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.hero-toc-card span {
+  display: block;
+  font-size: 0.98rem;
+  line-height: 1.4;
+}
+
+.hero-notes {
+  margin-top: 40px;
+}
+
+.hero-entry {
+  margin-bottom: 60px;
+}
+
+.hero-entry > h3 {
+  margin: 0 0 18px;
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+.hero-divider-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0 0 22px;
+}
+
+.hero-entry h4 {
+  margin: 26px 0 10px;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.hero-entry ul ul {
+  margin-top: 6px;
+  margin-bottom: 6px;
+}
+
+.return-link {
+  display: inline-block;
+  margin-top: 18px;
+}
+
+@media (max-width: 900px) {
+  .article-shell {
+    padding-top: 44px;
+  }
+
+  .article-title {
+    font-size: clamp(2.3rem, 7vw, 4rem);
+  }
+
+  .quick-nav h2,
+  .content-section > h2 {
+    font-size: clamp(1.8rem, 5vw, 2.7rem);
+  }
+}
+
+@media (max-width: 600px) {
+  .article-shell {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .article-meta {
+    gap: 10px;
+  }
+
+  .socials {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .intro-copy,
+  .quick-nav,
+  .content-section {
+    max-width: 100%;
+  }
+
+  .section-divider {
+    max-width: 220px;
+  }
+}
+/* ===== HACK WRAP: inline sombra image + scroll-reveal canvas ===== */
+.hack-wrap {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 2px;
+  line-height: 1;
+}
+.sombra-inline {
+  display: block;
+  width: 28px;
+  height: 28px;
+  object-fit: cover;
+  border-radius: 3px;
+}
+.hack-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  pointer-events: none;
+  border-radius: 3px;
+}
+
+/* ===== UNDOCUMENTED CHANGES ===== */
+.undocumented-block {
+  border: 1px solid rgba(160, 60, 255, 0.3);
+  border-left: 3px solid rgba(160, 60, 255, 0.6);
+  background: rgba(120, 0, 200, 0.06);
+  padding: 10px 14px;
+  margin: 14px 0;
+  border-radius: 2px;
+}
+.undocumented-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: rgba(180, 100, 255, 0.7);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+/* ===== SOMBRA DEV COMMENT GLITCH ===== */
+.sombra-glitch {
+  font-family: monospace;
+  font-size: 0.78rem;
+  color: rgba(200, 120, 255, 0.85);
+  word-break: break-all;
+  line-height: 1.4;
+}
+.b64-reveal {
+  font-family: monospace;
+  font-size: 0.72rem;
+  color: rgba(180, 100, 255, 0.6);
+  margin-top: 6px;
+  word-break: break-all;
+}
+
+/* ===== HERO ENTRY: new hero badge ===== */
+.new-hero-badge {
+  display: inline-block;
+  background: rgba(255, 160, 60, 0.15);
+  border: 1px solid rgba(255, 160, 60, 0.5);
+  color: #f1ae72;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 1px 8px;
+  border-radius: 2px;
+  margin-left: 10px;
+  vertical-align: middle;
+}
+.rework-badge {
+  display: inline-block;
+  background: rgba(200, 100, 255, 0.12);
+  border: 1px solid rgba(200, 100, 255, 0.4);
+  color: #c87aff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 1px 8px;
+  border-radius: 2px;
+  margin-left: 10px;
+  vertical-align: middle;
+}
+
+/* ===== SELF-CAST / MAPS SECTION ===== */
+.general-note {
+  background: rgba(255,255,255,0.03);
+  border-left: 2px solid var(--line);
+  padding: 10px 14px;
+  margin: 12px 0;
+  font-size: 0.95rem;
+  line-height: 1.8;
+}
+
+/* ===== HERO TOC TABLE (2018 Blizzard style) ===== */
+.hero-toc-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 0 32px;
+  font-family: "Metronic Pro", Arial, Helvetica, sans-serif;
+}
+.hero-toc-table thead tr {
+  border-top: 1px solid rgba(255,255,255,0.18);
+  border-bottom: 1px solid rgba(255,255,255,0.18);
+}
+.hero-toc-table th {
+  padding: 10px 8px;
+  text-align: center;
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--line);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  border-right: 1px solid rgba(255,255,255,0.08);
+}
+.hero-toc-table th:last-child { border-right: none; }
+.hero-toc-table td {
+  padding: 5px 8px;
+  text-align: center;
+  vertical-align: top;
+  border-right: 1px solid rgba(255,255,255,0.05);
+}
+.hero-toc-table td:last-child { border-right: none; }
+.hero-toc-table td a {
+  color: var(--link);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  font-size: 0.95rem;
+}
+.hero-toc-table td a:hover { color: var(--link-hover); }
+.hero-toc-table tbody tr:last-child td {
+  padding-bottom: 14px;
+}
+
+/* ===== H4 SECTION HEADERS (Abilities, Talents, Stats…) ===== */
+.hero-entry h4 {
+  color: rgb(153, 0, 255);
+}
+
+/* ===== ABILITY NAMES: first <strong> of each ability li ===== */
+.abilities-list > li > strong:first-child {
+  color: #0099ff;
+}
+
+/* ===== TALENTS: Level labels stay white ===== */
+.talents-list > li > strong:first-child {
+  color: #ffffff;
+}
+
+/* ===== TALENT NAMES: nested strong inside level groups ===== */
+.talents-list > li > ul > li > strong:first-child {
+  color: #0099ff;
+}
